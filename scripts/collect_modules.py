@@ -133,7 +133,7 @@ def build_module(entry):
         f"    Module GEO **{manifest.get('name', slug)}** · compatible GEO **{min_geo}** et suivants · "
         f"licence GPL-3.0-or-later\n\n"
         f"    [:lucide-download: Télécharger le ZIP]({repo_url}/releases/latest){{ .md-button .md-button--primary }} "
-        f"[:lucide-github: Dépôt]({repo_url}){{ .md-button }} "
+        f"[:fontawesome-brands-github: Dépôt]({repo_url}){{ .md-button }} "
         f"[:lucide-bug: Signaler un problème]({repo_url}/issues){{ .md-button }}\n\n"
         f"Pour installer le ZIP, voir [Installer un module](../../installer.md).\n\n"
     )
