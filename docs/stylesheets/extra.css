@@ -14,3 +14,42 @@
   --md-accent-fg-color:         #1f6fb8;
   --md-accent-fg-color--transparent: rgba(31, 111, 184, 0.1);
 }
+
+/* Catalogue des modules : pastilles version et GEO minimum */
+.module-badge {
+  display: inline-block;
+  padding: 0.1em 0.6em;
+  border-radius: 1em;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: var(--md-primary-fg-color--dark);
+  background: var(--md-accent-fg-color--transparent);
+}
+[data-md-color-scheme="slate"] .module-badge {
+  color: var(--md-primary-fg-color--light);
+}
+
+/* Catalogue des modules : cartes de même structure, pastilles et boutons alignés en bas */
+.md-typeset .grid.cards.module-cards > ul > li {   /* .grid.cards pour passer devant le display du thème */
+  display: flex;
+  flex-direction: column;
+}
+.md-typeset .module-cards > ul > li > p:has(+ hr) {     /* titre : place réservée pour deux lignes */
+  min-height: 3.2em;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.md-typeset .module-cards > ul > li > p:has(+ hr) a {
+  text-decoration: none;
+}
+.md-typeset .module-cards > ul > li > p:has(.module-badge) {
+  margin-top: auto;
+}
+.module-preview {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.2rem;
+}

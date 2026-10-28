@@ -50,7 +50,9 @@ Il n'utilise que la bibliothèque standard de Python.
    `changelog.md` et `guide-dev.md` s'ils existent.
 4. Réécrit les liens du README : liens vers `CHANGELOG.md` et `GUIDE-DEV.md` rendus internes au site, autres liens et images relatifs rendus absolus
    vers le dépôt. Les blocs de code ne sont pas modifiés.
-5. Génère `docs/modules/index.md`, le tableau des modules (description réduite à du texte brut, coupée à la dernière phrase entière).
+5. Génère `docs/modules/index.md`, le catalogue en cartes : accroche (`accroche` de `modules.json`, sinon début du README), version, GEO
+   minimum, bouton de téléchargement et, si le dépôt contient `docs/apercu.gif`, un aperçu animé (le même GIF s'affiche en
+   tête du README du module, donc de sa page sur le site).
 6. Met à jour le `nav` de `zensical.toml`, **uniquement** entre les marqueurs `# >>> modules` et `# <<< modules`.
 
 À savoir :

@@ -11,6 +11,7 @@ extra_css = [
 ]
 extra_javascript = [
   "javascripts/external-links.js",
+  "javascripts/module-preview.js",
 ]
 copyright = "Copyright &copy; 2026 Vienne Condrieu Agglomération"
 
