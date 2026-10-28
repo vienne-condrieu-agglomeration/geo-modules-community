@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Une question, une astuce, un retour d'expérience
-    url: https://discord.com/channels/1080047753863909446/
+    url: https://discord.gg/dkqJbz79tU
     about: Le Club Utilisateurs GEO (Discord) est le bon endroit pour échanger avant d'ouvrir une issue.
   - name: Signaler un problème ou proposer une fonctionnalité pour un module existant
     url: https://github.com/vienne-condrieu-agglomeration?q=geo-module-&type=repositories
