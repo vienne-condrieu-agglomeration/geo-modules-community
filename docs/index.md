@@ -43,7 +43,7 @@ structures qui utilisent GEO sont invitées à employer ces modules, à signaler
 
     Qui décide, et comment une idée devient une fonctionnalité d'un module.
 
-- :lucide-message-circle: **[Échanger](https://discord.com/channels/1080047753863909446/)**
+- :lucide-message-circle: **[Échanger](https://discord.gg/dkqJbz79tU)**
 
     Poser une question ou partager un retour d'expérience avec le Club Utilisateurs GEO, sur Discord.
 

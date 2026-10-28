@@ -10,7 +10,7 @@ Les contributions (corrections, améliorations, documentation) sont les bienvenu
 
 Le **Club Utilisateurs GEO** est un serveur Discord où les utilisateurs de GEO échangent sur son usage et son administration. Il compte des fils
 de discussion consacrés à certains de ces modules (comparaison de rasters, vues immersives Panoramax). Pour poser une question, partager un retour
-d'expérience ou discuter d'une idée avant d'ouvrir une issue, rejoignez le [Club Utilisateurs GEO](https://discord.com/channels/1080047753863909446/).
+d'expérience ou discuter d'une idée avant d'ouvrir une issue, rejoignez le [Club Utilisateurs GEO](https://discord.gg/dkqJbz79tU).
 
 Ce serveur est animé par la communauté des utilisateurs de GEO, indépendamment de ce site.
 
