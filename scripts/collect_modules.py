@@ -97,7 +97,7 @@ def first_paragraph(markdown):
 
 
 def short_summary(text, limit=220):
-    """Texte brut pour le tableau : liens, images et emphases réduits à leur texte, coupé à un mot entier."""
+    """Texte brut pour la carte du catalogue : liens, images et emphases réduits à leur texte, coupé à un mot entier."""
     text = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", text)
     text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
     text = re.sub(r"[*_`]", "", text).replace("|", "/")
@@ -109,6 +109,20 @@ def short_summary(text, limit=220):
     if end >= 60:
         return head[: end + 1]   # coupe à la dernière phrase entière
     return head.rsplit(" ", 1)[0].rstrip(",;:.(") + "…"
+
+
+def has_file(repo, path):
+    """Teste la présence d'un fichier facultatif sans le télécharger (requête HEAD sur raw.githubusercontent.com)."""
+    url = f"https://raw.githubusercontent.com/{ORG}/{repo}/{BRANCH}/{path}"
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=30):
+            return url
+    except urllib.error.HTTPError as error:
+        if error.code == 404:
+            return None
+        sys.exit(f"Échec de lecture de {url} : HTTP {error.code}")
+    except urllib.error.URLError as error:
+        sys.exit(f"Échec de lecture de {url} : {error.reason}")
 
 
 def build_module(entry):
@@ -147,19 +161,33 @@ def build_module(entry):
         (folder / "guide-dev.md").write_text(body, encoding="utf-8")
 
     pages = ["index.md"] + [f for f in ("changelog.md", "guide-dev.md") if (folder / f).exists()]
-    return {"slug": slug, "name": name, "version": version, "summary": summary, "min_geo": min_geo, "pages": pages}
+    return {
+        "slug": slug, "name": name, "version": version, "min_geo": min_geo, "pages": pages, "repo_url": repo_url,
+        "summary": entry.get("accroche") or short_summary(summary),
+        "icon": entry.get("icone", "puzzle"),
+        # GIF plutôt que vidéo : GitHub n'anime que les GIF dans un README, un seul fichier sert au dépôt et au site
+        "preview": has_file(repo, "docs/apercu.gif"),
+    }
+
+
+def card(m):
+    """Carte du catalogue : aperçu animé s'il existe, nom, accroche, version, GEO minimum et boutons."""
+    preview = f"![Aperçu du module {m['name']}]({m['preview']}){{ .module-preview loading=lazy }}\n\n    " if m["preview"] else ""
+    return (
+        f"-   {preview}:lucide-{m['icon']}:{{ .lg .middle }} **[{m['name']}]({m['slug']}/index.md)**\n\n"
+        f"    ---\n\n"
+        f"    {m['summary']}\n\n"
+        f'    <span class="module-badge">v{m["version"]}</span> <span class="module-badge">GEO {m["min_geo"]} et +</span>\n\n'
+        f"    [:lucide-download: Télécharger]({m['repo_url']}/releases/latest){{ .md-button .md-button--primary }} "
+        f"[Découvrir]({m['slug']}/index.md){{ .md-button }}\n"
+    )
 
 
 def write_index(modules):
-    rows = "\n".join(
-        f"| [{m['name']}]({m['slug']}/index.md) | {m['version']} | {m['min_geo']} | "
-        f"{short_summary(m['summary'])} |"
-        for m in modules
-    )
     page = (
         "# Les modules\n\n"
         "Modules d'extension pour la plateforme GEO de Business Geografic, publiés sous licence GPL-3.0-or-later.\n\n"
-        "| Module | Version | GEO minimum | Description |\n|---|---|---|---|\n" + rows + "\n\n"
+        '<div class="grid cards module-cards" markdown>\n\n' + "\n".join(card(m) for m in modules) + "\n</div>\n\n"
         "Pour importer un module dans votre application : [Installer un module](../installer.md).\n"
     )
     (OUT / "index.md").write_text(page, encoding="utf-8")

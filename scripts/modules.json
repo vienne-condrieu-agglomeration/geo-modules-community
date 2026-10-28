@@ -1,10 +1,25 @@
 {
-  "_commentaire": "Modules affichés sur le site. Ajouter une entrée ici suffit : scripts/collect_modules.py lit le dépôt, sa fiche src/plugin.geoext.json, son README et son CHANGELOG.",
+  "_commentaire": "Modules affichés sur le site. Ajouter une entrée ici suffit : scripts/collect_modules.py lit le dépôt, sa fiche src/plugin.geoext.json, son README et son CHANGELOG. « accroche » (facultatif) : phrase de la carte du catalogue, sinon la 1re phrase du README. « icone » (facultatif) : nom d'icône Lucide, sinon puzzle.",
   "organisation": "vienne-condrieu-agglomeration",
   "branche": "main",
   "modules": [
-    { "repo": "geo-module-panoramax", "slug": "panoramax" },
-    { "repo": "geo-module-compare-swipe", "slug": "compare-swipe" },
-    { "repo": "geo-module-dfi", "slug": "dfi" }
+    {
+      "repo": "geo-module-panoramax",
+      "slug": "panoramax",
+      "accroche": "Cliquez sur la carte, voyez la rue : la photo Panoramax la plus proche s'affiche dans l'application.",
+      "icone": "camera"
+    },
+    {
+      "repo": "geo-module-compare-swipe",
+      "slug": "compare-swipe",
+      "accroche": "Comparez deux orthophotos ou fonds raster au rideau ou à la loupe, directement sur la carte.",
+      "icone": "columns-2"
+    },
+    {
+      "repo": "geo-module-dfi",
+      "slug": "dfi",
+      "accroche": "Retracez l'histoire d'une parcelle : de quelles parcelles elle est issue et ce qu'elle est devenue.",
+      "icone": "git-fork"
+    }
   ]
 }
