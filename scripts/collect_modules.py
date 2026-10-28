@@ -172,7 +172,7 @@ def build_module(entry):
 
 def card(m):
     """Carte du catalogue : aperçu animé s'il existe, nom, accroche, version, GEO minimum et boutons."""
-    preview = f"![Aperçu du module {m['name']}]({m['preview']}){{ .module-preview loading=lazy }}\n\n    " if m["preview"] else ""
+    preview = f"[![Aperçu du module {m['name']}]({m['preview']}){{ .module-preview loading=lazy crossorigin=anonymous }}]({m['slug']}/index.md)\n\n    " if m["preview"] else ""
     return (
         f"-   {preview}:lucide-{m['icon']}:{{ .lg .middle }} **[{m['name']}]({m['slug']}/index.md)**\n\n"
         f"    ---\n\n"

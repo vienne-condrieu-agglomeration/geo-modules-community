@@ -10,6 +10,7 @@ aucun code de module**.
 docs/                       Pages écrites à la main : index, installer, contribuer, gouvernance, developper/
 docs/modules/               GÉNÉRÉ par scripts/collect_modules.py, non versionné : ne jamais l'éditer
 docs/javascripts/external-links.js   Ouvre les liens externes dans un nouvel onglet (chargé par extra_javascript)
+docs/javascripts/module-preview.js   Aperçus du catalogue : image fixe, GIF animé au survol seulement
 docs/stylesheets/extra.css  Couleurs du thème (bleu de la favicon)
 scripts/modules.json        Modules affichés (repo + slug)
 scripts/collect_modules.py  Lit fiche, README, CHANGELOG et GUIDE-DEV de chaque dépôt de module
