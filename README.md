@@ -1,7 +1,8 @@
-# geo-modules-community
+# Bibliothèque participative de modules GEO
 
-Site de documentation des [modules d'extension GEO](https://vienne-condrieu-agglomeration.github.io/geo-modules-community/) de Vienne Condrieu
-Agglomération et du Service d'Information Territoriale du Pôle Marennes Oléron : catalogue, installation, retours d'expérience de développement et contribution.
+Site de la [bibliothèque participative de modules GEO](https://vienne-condrieu-agglomeration.github.io/geo-modules-community/) : des modules d'extension
+sous licence libre, que chacun peut installer, adapter et améliorer pour enrichir les applications créées avec GEO. On y trouve le catalogue des
+modules, leur installation, des retours d'expérience de développement et le guide de contribution.
 
 Le site est construit avec [Zensical](https://zensical.org/) et publié par GitHub Pages.
 
