@@ -1,7 +1,7 @@
 # geo-modules-community
 
 Site de documentation des [modules d'extension GEO](https://vienne-condrieu-agglomeration.github.io/geo-modules-community/) de Vienne Condrieu
-Agglomération : catalogue, installation, retours d'expérience de développement et contribution.
+Agglomération et du Service d'Information Territoriale du Pôle Marennes Oléron : catalogue, installation, retours d'expérience de développement et contribution.
 
 Le site est construit avec [Zensical](https://zensical.org/) et publié par GitHub Pages.
 
