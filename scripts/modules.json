@@ -20,6 +20,12 @@
       "slug": "dfi",
       "accroche": "Retracez l'histoire d'une parcelle : de quelles parcelles elle est issue et ce qu'elle est devenue.",
       "icone": "git-fork"
+    },
+    {
+      "repo": "geo-module-cadastre-guide",
+      "slug": "cadastre-guide",
+      "accroche": "Apprenez à lire le cadastre : référence, MAJIC, propriétaires et fiche parcelle, expliqués aux agents qui débutent.",
+      "icone": "book-open"
     }
   ]
 }
