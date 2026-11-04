@@ -22,6 +22,7 @@ nav = [
   { "Modules" = [
     "modules/index.md",
     # >>> modules
+    { "Guide du cadastre" = [ "modules/cadastre-guide/index.md", "modules/cadastre-guide/changelog.md" ] },
     { "Comparateur de rasters (rideau / loupe)" = [ "modules/compare-swipe/index.md", "modules/compare-swipe/changelog.md" ] },
     { "Filiation des parcelles (DFI, DGFiP)" = [ "modules/dfi/index.md", "modules/dfi/changelog.md" ] },
     { "Vue immersive Panoramax" = [ "modules/panoramax/index.md", "modules/panoramax/changelog.md", "modules/panoramax/guide-dev.md" ] },
