@@ -12,6 +12,8 @@ docs/modules/               GÉNÉRÉ par scripts/collect_modules.py, non versio
 docs/javascripts/external-links.js   Ouvre les liens externes dans un nouvel onglet (chargé par extra_javascript)
 docs/javascripts/module-preview.js   Aperçus du catalogue : image fixe, GIF animé au survol seulement
 docs/stylesheets/extra.css  Couleurs du thème (bleu de la favicon)
+docs/assets/images/favicon.*  Favicon (icône Lucide « package ») : SVG, et PNG 48 px de repli
+overrides/main.html         Surcharge du thème : ajoute le lien vers la favicon SVG
 scripts/modules.json        Modules affichés (repo + slug)
 scripts/collect_modules.py  Lit fiche, README, CHANGELOG et GUIDE-DEV de chaque dépôt de module
 scripts/check_links.py      Contrôle les liens internes, ancres et liens externes du site construit

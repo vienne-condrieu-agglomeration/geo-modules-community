@@ -1,0 +1,6 @@
+{#- Favicon SVG en plus du PNG déclaré par `favicon` dans zensical.toml : les navigateurs
+    qui lisent le SVG le préfèrent, les autres gardent le PNG. -#}
+{% extends "base.html" %}
+{% block extrahead %}
+  <link rel="icon" href="{{ 'assets/images/favicon.svg' | url }}" type="image/svg+xml">
+{% endblock %}

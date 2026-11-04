@@ -49,8 +49,10 @@ nav = [
 
 [project.theme]
 language = "fr"
+custom_dir = "overrides"
+# PNG de repli ; le SVG est ajouté par overrides/main.html
 favicon = "assets/images/favicon.png"
-logo = "assets/images/favicon.png"
+icon.logo = "lucide/package"
 features = [
     "content.action.edit",
     "content.code.annotate",
