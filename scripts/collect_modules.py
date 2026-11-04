@@ -16,6 +16,7 @@ import os
 import re
 import shutil
 import sys
+import unicodedata
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -49,6 +50,11 @@ def fetch(repo, path, required=True):
         sys.exit(f"Échec de lecture de {url} : {error.reason}")
 
 
+def strip_accents(text):
+    """Retire les accents, comme le fait le site pour construire les ancres des titres."""
+    return "".join(c for c in unicodedata.normalize("NFD", text) if not unicodedata.combining(c))
+
+
 def rewrite_links(markdown, repo):
     """Rend absolus les liens et images relatifs du dépôt, hors blocs de code."""
     blob = f"https://github.com/{ORG}/{repo}/blob/{BRANCH}/"
@@ -59,6 +65,9 @@ def rewrite_links(markdown, repo):
 
     def fix(match):
         bang, label, target = match.group(1), match.group(2), match.group(3).strip()
+        # Ancre de la page : GitHub garde les accents (#dépannage), le site les retire (#depannage)
+        if target.startswith("#"):
+            return f"{bang}[{label}]({strip_accents(target)})"
         if not is_relative(target):
             return match.group(0)
         path, _, anchor = target.partition("#")
