@@ -26,6 +26,12 @@
       "slug": "cadastre-guide",
       "accroche": "Apprenez à lire le cadastre : référence, MAJIC, propriétaires et fiche parcelle, expliqués aux agents qui débutent.",
       "icone": "book-open"
+    },
+    {
+      "repo": "geo-module-lidar-hd",
+      "slug": "lidar-hd",
+      "accroche": "Explorez en 3D le nuage de points LiDAR HD de l'IGN : profils en travers, cadastre et exports DXF du terrain.",
+      "icone": "mountain"
     }
   ]
 }
