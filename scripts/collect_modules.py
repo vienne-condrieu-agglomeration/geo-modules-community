@@ -97,6 +97,12 @@ def drop_title(markdown):
     return re.sub(r"\A\s*# .*\n", "", markdown, count=1).lstrip("\n")
 
 
+def drop_empty_unreleased(markdown):
+    """Retire la section « [Non publié] » quand elle est vide : sinon son titre, juste au-dessus de la dernière version,
+    laisse croire que cette version n'est pas publiée. Une section avec du contenu est conservée."""
+    return re.sub(r"^## \[Non publié\][ \t]*\n(?:[ \t]*\n)*(?=## |\Z)", "", markdown, count=1, flags=re.M)
+
+
 def first_paragraph(markdown):
     for block in re.split(r"\n\s*\n", drop_title(markdown)):
         text = block.strip()
@@ -163,7 +169,7 @@ def build_module(entry):
     (folder / "index.md").write_text(header + rewrite_links(drop_title(readme), repo), encoding="utf-8")
 
     if changelog:
-        body = "# Journal des nouveautés — " + name + "\n\n" + rewrite_links(drop_title(changelog), repo)
+        body = "# Journal des nouveautés — " + name + "\n\n" + rewrite_links(drop_empty_unreleased(drop_title(changelog)), repo)
         (folder / "changelog.md").write_text(body, encoding="utf-8")
     if guide:
         body = "# Guide de développement — " + name + "\n\n" + rewrite_links(drop_title(guide), repo)
