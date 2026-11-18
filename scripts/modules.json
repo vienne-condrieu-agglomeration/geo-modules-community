@@ -30,7 +30,7 @@
     {
       "repo": "geo-module-lidar-hd",
       "slug": "lidar-hd",
-      "accroche": "Explorez en 3D le nuage de points LiDAR HD de l'IGN : profils en travers, cadastre et exports DXF du terrain.",
+      "accroche": "Explorez en 3D le nuage de points LiDAR HD de l'IGN : profils en travers, maquette avec bâtiments et arbres en 3D, vidéo et exports DXF du terrain.",
       "icone": "mountain"
     }
   ]
